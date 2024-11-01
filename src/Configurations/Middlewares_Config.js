@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const VerifyRequest = require("../Middlewares/Auth_Middleware");
 const cookieParser = require("cookie-parser"); 
-
+const checkBlockStatus = require("../Middlewares/CheckBlockStatus.Middleware");
 
 module.exports = function (app) {
 
@@ -24,8 +24,6 @@ module.exports = function (app) {
     app.use(express.json());
 
     app.use(cookieParser());
-
-    app.use(VerifyRequest);
 
 
 }
